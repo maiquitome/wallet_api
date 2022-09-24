@@ -1,5 +1,5 @@
-defmodule Portifolio.Repo do
+defmodule Portfolio.Repo do
   use Ecto.Repo,
-    otp_app: :portifolio,
+    otp_app: :portfolio,
     adapter: Ecto.Adapters.Postgres
 end

@@ -1,12 +1,12 @@
-defmodule PortifolioWeb do
+defmodule PortfolioWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PortifolioWeb, :controller
-      use PortifolioWeb, :view
+      use PortfolioWeb, :controller
+      use PortfolioWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule PortifolioWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PortifolioWeb
+      use Phoenix.Controller, namespace: PortfolioWeb
 
       import Plug.Conn
-      import PortifolioWeb.Gettext
-      alias PortifolioWeb.Router.Helpers, as: Routes
+      import PortfolioWeb.Gettext
+      alias PortfolioWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/portifolio_web/templates",
-        namespace: PortifolioWeb
+        root: "lib/portfolio_web/templates",
+        namespace: PortfolioWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule PortifolioWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PortifolioWeb.Gettext
+      import PortfolioWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule PortifolioWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PortifolioWeb.ErrorHelpers
-      import PortifolioWeb.Gettext
-      alias PortifolioWeb.Router.Helpers, as: Routes
+      import PortfolioWeb.ErrorHelpers
+      import PortfolioWeb.Gettext
+      alias PortfolioWeb.Router.Helpers, as: Routes
     end
   end
 

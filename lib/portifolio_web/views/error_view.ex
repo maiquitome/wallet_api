@@ -1,5 +1,5 @@
-defmodule PortifolioWeb.ErrorView do
-  use PortifolioWeb, :view
+defmodule PortfolioWeb.ErrorView do
+  use PortfolioWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

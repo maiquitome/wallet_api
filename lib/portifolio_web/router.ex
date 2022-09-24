@@ -1,11 +1,11 @@
-defmodule PortifolioWeb.Router do
-  use PortifolioWeb, :router
+defmodule PortfolioWeb.Router do
+  use PortfolioWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PortifolioWeb do
+  scope "/api", PortfolioWeb do
     pipe_through :api
   end
 
@@ -22,7 +22,7 @@ defmodule PortifolioWeb.Router do
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
 
-      live_dashboard "/dashboard", metrics: PortifolioWeb.Telemetry
+      live_dashboard "/dashboard", metrics: PortfolioWeb.Telemetry
     end
   end
 

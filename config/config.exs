@@ -7,14 +7,14 @@
 # General application configuration
 import Config
 
-config :portifolio,
-  ecto_repos: [Portifolio.Repo]
+config :portfolio,
+  ecto_repos: [Portfolio.Repo]
 
 # Configures the endpoint
-config :portifolio, PortifolioWeb.Endpoint,
+config :portfolio, PortfolioWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PortifolioWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Portifolio.PubSub,
+  render_errors: [view: PortfolioWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Portfolio.PubSub,
   live_view: [signing_salt: "V0w7q31J"]
 
 # Configures the mailer
@@ -24,7 +24,7 @@ config :portifolio, PortifolioWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :portifolio, Portifolio.Mailer, adapter: Swoosh.Adapters.Local
+config :portfolio, Portfolio.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

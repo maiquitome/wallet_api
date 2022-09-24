@@ -1,4 +1,4 @@
-# Portifolio
+# Portfolio
 
 To start your Phoenix server:
 

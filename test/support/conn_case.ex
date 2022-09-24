@@ -1,4 +1,4 @@
-defmodule PortifolioWeb.ConnCase do
+defmodule PortfolioWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule PortifolioWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PortifolioWeb.ConnCase, async: true`, although
+  by setting `use PortfolioWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,17 +22,17 @@ defmodule PortifolioWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import PortifolioWeb.ConnCase
+      import PortfolioWeb.ConnCase
 
-      alias PortifolioWeb.Router.Helpers, as: Routes
+      alias PortfolioWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint PortifolioWeb.Endpoint
+      @endpoint PortfolioWeb.Endpoint
     end
   end
 
   setup tags do
-    Portifolio.DataCase.setup_sandbox(tags)
+    Portfolio.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

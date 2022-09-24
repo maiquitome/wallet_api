@@ -1,12 +1,12 @@
-defmodule PortifolioWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :portifolio
+defmodule PortfolioWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :portfolio
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_portifolio_key",
+    key: "_portfolio_key",
     signing_salt: "rrrP15OO"
   ]
 
@@ -18,7 +18,7 @@ defmodule PortifolioWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :portifolio,
+    from: :portfolio,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -26,7 +26,7 @@ defmodule PortifolioWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :portifolio
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :portfolio
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -44,5 +44,5 @@ defmodule PortifolioWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PortifolioWeb.Router
+  plug PortfolioWeb.Router
 end

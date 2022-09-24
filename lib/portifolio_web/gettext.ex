@@ -1,11 +1,11 @@
-defmodule PortifolioWeb.Gettext do
+defmodule PortfolioWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import PortifolioWeb.Gettext
+      import PortfolioWeb.Gettext
 
       # Simple translation
       gettext("Here is the string to translate")
@@ -20,5 +20,5 @@ defmodule PortifolioWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :portifolio
+  use Gettext, otp_app: :portfolio
 end
