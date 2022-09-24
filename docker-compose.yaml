@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  wallet_app:
+    container_name: wallet_app
+    image: wallet_api
+    build:
+      context: .
+    command: /bin/sh docker_dev_start.sh
+    volumes:
+      - .:/home/elixir/app
+    ports:
+      - 4000:4000
+    depends_on:
+      - wallet_db
+    links:
+      - wallet_db
+
+  wallet_db:
+    container_name: wallet_db
+    image: postgres:14.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5000:5432

@@ -1,16 +1,19 @@
-defmodule Portfolio.MixProject do
+defmodule Wallet.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :portfolio,
+      app: :wallet,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [
+        "ecto.reset.test": :test
+      ]
     ]
   end
 
@@ -19,7 +22,7 @@ defmodule Portfolio.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Portfolio.Application, []},
+      mod: {Wallet.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -58,6 +61,7 @@ defmodule Portfolio.MixProject do
       setup: ["deps.get", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "ecto.reset.test": ["ecto.reset"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
