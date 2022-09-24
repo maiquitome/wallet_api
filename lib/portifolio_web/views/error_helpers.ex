@@ -1,4 +1,4 @@
-defmodule PortfolioWeb.ErrorHelpers do
+defmodule WalletWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule PortfolioWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(PortfolioWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(WalletWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PortfolioWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(WalletWeb.Gettext, "errors", msg, opts)
     end
   end
 end

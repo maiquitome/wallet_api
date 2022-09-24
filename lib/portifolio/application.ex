@@ -1,4 +1,4 @@
-defmodule Portfolio.Application do
+defmodule Wallet.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule Portfolio.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Portfolio.Repo,
+      Wallet.Repo,
       # Start the Telemetry supervisor
-      PortfolioWeb.Telemetry,
+      WalletWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Portfolio.PubSub},
+      {Phoenix.PubSub, name: Wallet.PubSub},
       # Start the Endpoint (http/https)
-      PortfolioWeb.Endpoint
-      # Start a worker by calling: Portfolio.Worker.start_link(arg)
-      # {Portfolio.Worker, arg}
+      WalletWeb.Endpoint
+      # Start a worker by calling: Wallet.Worker.start_link(arg)
+      # {Wallet.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Portfolio.Supervisor]
+    opts = [strategy: :one_for_one, name: Wallet.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule Portfolio.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    PortfolioWeb.Endpoint.config_change(changed, removed)
+    WalletWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

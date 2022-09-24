@@ -7,14 +7,14 @@
 # General application configuration
 import Config
 
-config :portfolio,
-  ecto_repos: [Portfolio.Repo]
+config :wallet,
+  ecto_repos: [Wallet.Repo]
 
 # Configures the endpoint
-config :portfolio, PortfolioWeb.Endpoint,
+config :wallet, WalletWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PortfolioWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Portfolio.PubSub,
+  render_errors: [view: WalletWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Wallet.PubSub,
   live_view: [signing_salt: "V0w7q31J"]
 
 # Configures the mailer
@@ -24,7 +24,7 @@ config :portfolio, PortfolioWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :portfolio, Portfolio.Mailer, adapter: Swoosh.Adapters.Local
+config :wallet, Wallet.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

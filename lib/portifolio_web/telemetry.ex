@@ -1,4 +1,4 @@
-defmodule PortfolioWeb.Telemetry do
+defmodule WalletWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,23 +31,23 @@ defmodule PortfolioWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("portfolio.repo.query.total_time",
+      summary("wallet.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("portfolio.repo.query.decode_time",
+      summary("wallet.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("portfolio.repo.query.query_time",
+      summary("wallet.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("portfolio.repo.query.queue_time",
+      summary("wallet.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("portfolio.repo.query.idle_time",
+      summary("wallet.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -65,7 +65,7 @@ defmodule PortfolioWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {PortfolioWeb, :count_users, []}
+      # {WalletWeb, :count_users, []}
     ]
   end
 end

@@ -1,4 +1,4 @@
-# Portfolio
+# Wallet
 
 To start your Phoenix server:
 

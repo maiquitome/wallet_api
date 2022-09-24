@@ -1,5 +1,5 @@
-defmodule PortfolioWeb.ErrorView do
-  use PortfolioWeb, :view
+defmodule WalletWeb.ErrorView do
+  use WalletWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

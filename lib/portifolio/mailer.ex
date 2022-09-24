@@ -1,3 +1,3 @@
-defmodule Portfolio.Mailer do
-  use Swoosh.Mailer, otp_app: :portfolio
+defmodule Wallet.Mailer do
+  use Swoosh.Mailer, otp_app: :wallet
 end
