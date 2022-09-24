@@ -12,7 +12,8 @@ defmodule Wallet.MixProject do
       aliases: aliases(),
       deps: deps(),
       preferred_cli_env: [
-        "ecto.reset.test": :test
+        "ecto.reset.test": :test,
+        ci: :test
       ]
     ]
   end
@@ -46,7 +47,8 @@ defmodule Wallet.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -62,7 +64,14 @@ defmodule Wallet.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "ecto.reset.test": ["ecto.reset"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      ci: [
+        "format --check-formatted",
+        "credo --strict",
+        "ecto.rollback --all",
+        "ecto.migrate",
+        "test"
+      ]
     ]
   end
 end
